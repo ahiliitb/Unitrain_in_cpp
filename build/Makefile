@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ahilkhanjnv/Unitrain_in_C++
+CMAKE_SOURCE_DIR = /home/ahilkhanjnv/Unitrain_in_cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ahilkhanjnv/Unitrain_in_C++/build
+CMAKE_BINARY_DIR = /home/ahilkhanjnv/Unitrain_in_cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ahilkhanjnv/Unitrain_in_C++/build/CMakeFiles /home/ahilkhanjnv/Unitrain_in_C++/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ahilkhanjnv/Unitrain_in_cpp/build/CMakeFiles /home/ahilkhanjnv/Unitrain_in_cpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ahilkhanjnv/Unitrain_in_C++/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ahilkhanjnv/Unitrain_in_cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -126,8 +126,32 @@ basic_model: cmake_check_build_system
 
 # fast build rule for target.
 basic_model/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/basic_model.dir/build.make src/CMakeFiles/basic_model.dir/build
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_model.dir/build.make CMakeFiles/basic_model.dir/build
 .PHONY : basic_model/fast
+
+src/basic_model.o: src/basic_model.cpp.o
+.PHONY : src/basic_model.o
+
+# target to build an object file
+src/basic_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_model.dir/build.make CMakeFiles/basic_model.dir/src/basic_model.cpp.o
+.PHONY : src/basic_model.cpp.o
+
+src/basic_model.i: src/basic_model.cpp.i
+.PHONY : src/basic_model.i
+
+# target to preprocess a source file
+src/basic_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_model.dir/build.make CMakeFiles/basic_model.dir/src/basic_model.cpp.i
+.PHONY : src/basic_model.cpp.i
+
+src/basic_model.s: src/basic_model.cpp.s
+.PHONY : src/basic_model.s
+
+# target to generate assembly for a file
+src/basic_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/basic_model.dir/build.make CMakeFiles/basic_model.dir/src/basic_model.cpp.s
+.PHONY : src/basic_model.cpp.s
 
 # Help Target
 help:
@@ -138,6 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... basic_model"
+	@echo "... src/basic_model.o"
+	@echo "... src/basic_model.i"
+	@echo "... src/basic_model.s"
 .PHONY : help
 
 

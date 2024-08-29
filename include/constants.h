@@ -1,5 +1,9 @@
-const unsigned int BATCH_SIZE = 1;
-const unsigned int EPOCH = 1;
+#include <bits/stdc++.h>
+
 const unsigned int HEIGHT = 64;
 const unsigned int WIDTH = 64;
-const unsigned int INPUTCHANNEL = 3;
+const std::string TRAIN_DATE_DIR = "./data";  // directory should contain data with name of label
+const std::string TEST_DATE_DIR = "./data"; 
+torch::Device DEVICE(torch::kCPU); // CPU device
+
+
